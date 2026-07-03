@@ -6,22 +6,26 @@
 
 :root {
     /* Paleta Principal */
-    --primary: #6D4AFF;
-    --secundary: #8B5CF6;
-
+    --primaria: #6D4AFF;
+    --secundaria: #8B5CF6;
+    
+    
     /* Layout Claro */
     --bg-claro: #F6F8FC;
     --bg-card-claro: #FFFFFF;
     --title-claro: #1E293B;
     --txt-prin-claro: #334155;
     --txt-sec-claro: #64748B;  
-
+    
     /* Layout Escuro */
     --bg-escuro: #0D1117;
-    --bg-card-escuro: #1A2236;
+    --bg-card-escuro: #14182C;
     --title-esc: #F8FAFC;
     --txt-prin-esc: #E2E8F0;
     --txt-sec-esc: #94A3B8;
+    --tag: #2c205a;
+    --tag-borda: #443677;
+    --tag-txt: #a180e9;
 }
 
 body {
@@ -67,11 +71,16 @@ nav img {
     color: var(--txt-sec-esc);
 }
 
+#titulo-h2 {
+    color: var(--title-esc);
+    text-align: center;
+}
+
 .formulario {
     background-color: var(--bg-card-escuro);
     border: solid 1px var(--txt-prin-claro);
     border-radius: 10px;
-    padding: 10px 20px;
+    padding: 20px 20px;
     color: var(--txt-prin-esc);
     display: flex;
     flex-direction: column;
@@ -106,6 +115,31 @@ nav img {
 
 .form input::placeholder {
     color: var(--txt-sec-esc);
+}
+
+.form-habilidades {
+    display: flex;
+    gap: 10px;
+}
+
+.habilidades {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    background: var(--tag);
+    color: var(--tag-txt);
+    font-weight: bold;
+    padding: 5px 10px;
+    border: solid 1px var(--tag-borda);
+    border-radius: 8px;
+    box-shadow:
+    inset 0 1px 1px rgba(255,255,255,.03), 0 2px 8px rgba(0,0,0,.18);
 }
 
 .btn {

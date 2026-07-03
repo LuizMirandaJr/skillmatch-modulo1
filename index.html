@@ -24,7 +24,7 @@
         </div>
         <!-- FORMULÁRIO -->
         <form action="POST" class="formulario">
-            <h2 class="titulo-h2 form-titulo"><i class="bi bi-person-circle"></i> Seus Dados</h2>
+            <h2 id="titulo-h2" class="form-titulo"><i class="bi bi-person-circle"></i> Seus Dados</h2>
             <div class="form">
                 <label for="nome">Nome</label>
                 <input type="text" placeholder="Digite seu nome" id="nome">
@@ -41,16 +41,18 @@
                 <option value="+5">+5 anos</option>
             </select>
         </div>
-        <h2 class="titulo-h2 form-titulo"><i class="bi bi-code-slash"></i> Suas Habilidades</h2>
-        <div class="habilidades form">
-            <span class="tag">JavaScript</span>
+        <div class="form form-habilidades">
+            <h2 id="titulo-h2"><i class="bi bi-code-slash"></i> Suas Habilidades</h2>
+            <div class="habilidades">
+                <span class="tag">JavaScript <i class="bi bi-x-circle-fill"></i></span>
+            </div>
             <input type="text" name="javascript" id="javascript" placeholder="Digite uma habilidade">
         </div>
         <button type="button" id="btn-id" class="btn btn-primary btn-lg btn-block">Encontrar vagas <i class="bi bi-search"></i></button>
         </form>
         <!-- RESULTADO VAGAS -->
         <div class="vagas-titulos">
-            <h2 class="titulo-h2"><i class="bi bi-stars"></i> Vagas para você</h2>
+            <h2 id="titulo-h2"><i class="bi bi-stars"></i> Vagas para você</h2>
             <p class="vagas-texto">Baseado no seu perfil</p>
         </div>
         <div class="cards">
