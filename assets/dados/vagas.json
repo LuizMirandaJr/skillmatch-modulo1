@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "empresa": "Tech Solutions",
+        "cargo": "Desenvolvedor Front-end Júnior",
+        "nivel": "Júnior",
+        "modalidade": "Remoto",
+        "salario": 3800,
+        "local": "São Paulo - SP"
+    },
+    {
+        "id": 2,
+        "empresa": "CodeWave",
+        "cargo": "Desenvolvedor Front-end Pleno",
+        "nivel": "Pleno",
+        "modalidade": "Híbrido",
+        "salario": 6200,
+        "local": "Curitiba - PR"
+    },
+    {
+        "id": 3,
+        "empresa": "Pixel Studio",
+        "cargo": "Desenvolvedor Front-end React",
+        "nivel": "Pleno",
+        "modalidade": "Remoto",
+        "salario": 7500,
+        "local": "Rio de Janeiro - RJ"
+    },
+    {
+        "id": 4,
+        "empresa": "DevCore",
+        "cargo": "Desenvolvedor Back-end Node.js",
+        "nivel": "Pleno",
+        "modalidade": "Remoto",
+        "salario": 7000,
+        "local": "Belo Horizonte - MG"
+    },
+    {
+        "id": 5,
+        "empresa": "CloudSoft",
+        "cargo": "Desenvolvedor Back-end Java",
+        "nivel": "Sênior",
+        "modalidade": "Presencial",
+        "salario": 9800,
+        "local": "Campinas - SP"
+    },
+    {
+        "id": 6,
+        "empresa": "Infinity Tech",
+        "cargo": "Desenvolvedor Back-end Python",
+        "nivel": "Júnior",
+        "modalidade": "Remoto",
+        "salario": 4500,
+        "local": "Recife - PE"
+    },
+    {
+        "id": 7,
+        "empresa": "Next Systems",
+        "cargo": "Desenvolvedor Full Stack",
+        "nivel": "Pleno",
+        "modalidade": "Remoto",
+        "salario": 8500,
+        "local": "Florianópolis - SC"
+    },
+    {
+        "id": 8,
+        "empresa": "Digital Labs",
+        "cargo": "Desenvolvedor Full Stack JavaScript",
+        "nivel": "Júnior",
+        "modalidade": "Híbrido",
+        "salario": 5500,
+        "local": "Porto Alegre - RS"
+    },
+    {
+        "id": 9,
+        "empresa": "Rocket Systems",
+        "cargo": "Desenvolvedor Full Stack",
+        "nivel": "Sênior",
+        "modalidade": "Remoto",
+        "salario": 12500,
+        "local": "São Paulo - SP"
+    },
+    {
+        "id": 10,
+        "empresa": "Nova Code",
+        "cargo": "Desenvolvedor Front-end Vue.js",
+        "nivel": "Júnior",
+        "modalidade": "Presencial",
+        "salario": 4200,
+        "local": "Joinville - SC"
+    }
+]

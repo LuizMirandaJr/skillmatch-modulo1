@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "nome": "HTML",
+        "categoria": "Frontend"
+    },
+    {
+        "id": 2,
+        "nome": "CSS",
+        "categoria": "Frontend"
+    },
+    {
+        "id": 3,
+        "nome": "JavaScript",
+        "categoria": "Frontend"
+    },
+    {
+        "id": 4,
+        "nome": "TypeScript",
+        "categoria": "Frontend"
+    },
+    {
+        "id": 5,
+        "nome": "React",
+        "categoria": "Frontend"
+    },
+    {
+        "id": 6,
+        "nome": "Node.js",
+        "categoria": "Backend"
+    },
+    {
+        "id": 7,
+        "nome": "MySQL",
+        "categoria": "Banco de Dados"
+    },
+    {
+        "id": 8,
+        "nome": "Git",
+        "categoria": "Ferramentas"
+    }
+]
