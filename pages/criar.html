@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Match</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    <link rel="stylesheet" href="../assets/styles/styles-page-criar.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img src="../assets/imgs/logo-escuro.png" class="logo" alt="logo skillmatch">
+            <div class="menu">
+                <div class="hover-underline">
+                    <a href="#">Minhas Vagas</a>
+                </div>
+                <div class="hover-underline">
+                    <a href="./pages/criar.html">Criar Vaga</a>
+                </div>
+                <div class="hover-underline">
+                    <a href="/pages/vagas.html">Todas as Vagas</a>
+                </div>
+            </div>
+            <span class="borda"></span>
+        </nav>
+    </header>
+    <main class="main-content">
+        <section class="hero">
+            <div class="hero-titulos">
+                <div class="hero-mensagem">
+                    <h1 class="hero-titulo">Encontre os <span class="span-txt">melhores
+                            candidatos</span></h1>
+                    <p class="hero-texto">Preencha as informações para publicar a vaga.</p>
+                </div>
+                <img src="../assets/imgs/hero-img.png" alt="icone para skillmatch" class="hero-img">
+            </div>
+        </section>
+        <!-- FORMULÁRIO -->
+        <section class="section-form">
+            <form action="POST" class="formulario">
+                <h2 id="titulo-h2" class="form-titulo"><i class="bi bi-info-circle icon-title"></i> Informações
+                    principais</h2>
+                <div class="form">
+                    <label for="titulo-vaga">Título da vaga <span class="obrigatorio">*</span></label>
+                    <input type="text" placeholder="Ex: Desenvolvedor Front-End" id="titulo-vaga">
+                </div>
+                <div class="form">
+                    <label for="empresa">Empresa <span class="obrigatorio">*</span></label>
+                    <input type="text" placeholder="Ex: Tech Solutions" id="empresa">
+                </div>
+                <div class="form">
+                    <label for="criar-experiencia">Experiência <span class="obrigatorio">*</span></label>
+                    <select name="criar-experiencia" id="criar-experiencia">
+                        <option value="sem-experiencia">Sem experiência</option>
+                        <option value="1-2">1-2 anos</option>
+                        <option value="3-5">3-5 anos</option>
+                        <option value="+5">+5 anos</option>
+                    </select>
+                </div>
+                <div class="form">
+                    <label for="modalidade">Modalidade <span class="obrigatorio">*</span></label>
+                    <select name="modalidade" id="modalidade">
+                        <option value="remoto">Remoto</option>
+                        <option value="presencial">Presencial</option>
+                        <option value="hibrido">Híbrido</option>
+                    </select>
+                </div>
+                <div class="form">
+                    <label for="salario">Salário <span class="obrigatorio">*</span></label>
+                    <div class="input-salario">
+                        <span class="reais">R$</span>
+                        <input type="text" placeholder="Ex: 3000" id="salario">
+                    </div>
+                </div>
+                <div class="form form-habilidades">
+                    <h2 id="titulo-h2"><i class="bi bi-code-slash icon-title"></i> Habilidades exigidas</h2>
+                    <input type="text" name="javascript" id="input-habilidades" placeholder="Buscar habilidades">
+                    <div class="habilidades">
+                        <span class="tag">JavaScript <i class="bi bi-x-circle-fill icon-tag"></i></span>
+                    </div>
+                </div>
+                <button type="button" id="btn-id" class="btn btn-primary btn-lg btn-block">Publicar Vaga <i
+                        class="bi bi-send"></i></button>
+            </form>
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script type="module" src="./assets/scripts/main.js"></script>
+</body>
+
+</html>
