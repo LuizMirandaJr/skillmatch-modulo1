@@ -23,13 +23,13 @@
             <img src="../assets/imgs/logo-escuro.png" class="logo" alt="logo skillmatch">
             <div class="menu">
                 <div class="hover-underline">
-                    <a href="../pages/index.html">Minhas Vagas</a>
+                    <a href="./index.html">Minhas Vagas</a>
                 </div>
                 <div class="hover-underline">
-                    <a href="../pages/criar.html">Criar Vaga</a>
+                    <a href="./criar.html">Criar Vaga</a>
                 </div>
                 <div class="hover-underline">
-                    <a href="/pages/vagas.html">Todas as Vagas</a>
+                    <a href="./vagas.html">Todas as Vagas</a>
                 </div>
             </div>
             <span class="borda"></span>
@@ -47,34 +47,37 @@
         </section>
         <!-- FORMULÁRIO -->
         <section class="section-form">
-            <form action="POST" class="formulario">
+            <form id="form-dados" action="form" class="formulario">
                 <h2 id="titulo-h2" class="form-titulo"><i class="bi bi-person-circle icon-title"></i> Seus Dados</h2>
                 <div class="form">
                     <label for="nome">Nome</label>
-                    <input type="text" placeholder="Digite seu nome" id="nome">
+                    <input type="text" placeholder="Digite seu nome" id="nome" required>
                 </div>
                 <div class="form">
                     <label for="idade">Idade</label>
-                    <input type="text" placeholder="Digite sua idade" id="idade">
+                    <input type="number" placeholder="Digite sua idade" id="idade" class="input-number" required>
                 </div>
                 <div class="form">
                     <label for="experiencia">Tempo de experiência</label>
-                    <select name="experiencia" id="experiencia">
+                    <select name="experiencia" id="experiencia" required>
                         <option value="sem-experiencia">Sem experiência</option>
-                        <option value="1-2">1-2 anos</option>
-                        <option value="3-5">3-5 anos</option>
-                        <option value="+5">+5 anos</option>
+                        <option value="1-2-anos">1-2 anos</option>
+                        <option value="3-5-anos">3-5 anos</option>
+                        <option value="+5-anos">+5 anos</option>
                     </select>
                 </div>
-                <div class="form form-habilidades">
-                    <h2 id="titulo-h2"><i class="bi bi-code-slash icon-title"></i> Suas Habilidades</h2>
-                    <input type="text" name="javascript" id="input-habilidades" placeholder="Buscar habilidades">
-                    <div class="habilidades">
-                        <span class="tag">JavaScript <i class="bi bi-x-circle-fill icon-tag"></i></span>
-                    </div>
+
+                <div id="lista-habilidades" class="lista-habilidades">
+
+                    <!-- BASE PARA ESCREVER COM O JAVASCRIPT -->
+                    <!-- <label class="checkbox-habilidade texto-habilidade">
+                        <input type="checkbox" name="habilidades" value="habilidade">
+                        <span>CSS</span>
+                    </label> -->
+
                 </div>
 
-                <button type="button" id="btn-id" class="btn btn-primary btn-lg btn-block">Encontrar vagas <i
+                <button type="submit" id="btn-id" class="btn btn-primary btn-lg btn-block">Encontrar vagas <i
                         class="bi bi-search"></i></button>
             </form>
         </section>
@@ -94,12 +97,12 @@
                         </div>
                     </div>
                     <div class="job-infos">
-                        <p class="empresa">Tech Solutions</p>
-                        <h3 class="nome-vaga">Desenvolvedor Front-End</h3>
+                        <p id="empresa-destaque" class="empresa"></p>
+                        <h3 id="nome-vaga-destaque" class="nome-vaga"></h3>
                         <div class="modelo-salario">
-                            <span class="tag-vaga bg-modelo">Remoto</span>
-                            <span class="tag-vaga bg-salario">R$ 6.500</span>
-                            <span class="tag-vaga bg-modalidade">CLT</span>
+                            <span id="modelo-destaque" class="tag-vaga bg-modelo"></span>
+                            <span id="salario-destaque" class="tag-vaga bg-salario"></span>
+                            <span id="modalidade-destaque" class="tag-vaga bg-modalidade"></span>
                         </div>
                     </div>
                 </div>
@@ -126,19 +129,20 @@
                         </div>
                     </div>
                     <div class="job-infos">
-                        <p class="empresa">Tech Solutions</p>
-                        <h3 class="nome-vaga">Desenvolvedor Front-End</h3>
+                        <p id="empresa" class="empresa"></p>
+                        <h3 id="nome-vaga" class="nome-vaga"></h3>
                         <div class="modelo-salario">
-                            <span class="tag-vaga bg-modelo">Remoto</span>
-                            <span class="tag-vaga bg-salario">R$ 6.500</span>
-                            <span class="tag-vaga bg-modalidade">PJ</span>
+                            <span id="modelo" class="tag-vaga bg-modelo"></span>
+                            <span id="salario" class="tag-vaga bg-salario"></span>
+                            <span id="modalidade" class="tag-vaga bg-modalidade"></span>
                         </div>
                     </div>
                 </div>
                 <div class="compatibilidade">
-                    <p class="comp-texto">Compatibilidade</p>
-                    <div class="w3-round barra-bg barra">
-                        <div class="w3-container w3-round barra-cor barra-txt" style="width:25%">25%</div>
+                    <p id="compatibilidade" class="comp-texto">Compatibilidade</p>
+                    <div id="barra-bg" class="w3-round barra-bg barra">
+                        <div id="barra-txt" class="w3-container w3-round barra-cor barra-txt" style="width:25%">25%
+                        </div>
                     </div>
                 </div>
             </div>
@@ -148,7 +152,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
-    <script type="module" src="./assets/scripts/main.js"></script>
+    <script src="../assets/scripts/main.js"></script>
 </body>
 
 </html>
