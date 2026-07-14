@@ -8,7 +8,7 @@ async function carregarHabilidades() {
     const resposta = await fetch("../assets/dados/habilidades.json")
     // console.log("lista carregada")
     const dados = await resposta.json()
-    // console.log(dados) // console para ver a lista de habilidades
+    //console.log(dados) // console para ver a lista de habilidades
 
     habilidadesCarregadas = dados
 
