@@ -290,12 +290,13 @@ input[type="number"] {
 
 /* CARDS DE VAGAS */
 
-.vagas {
+.container-vagas {
     padding: 10px 0;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    gap: 10px;
 }
 
 .vagas-texto {
@@ -304,7 +305,7 @@ input[type="number"] {
     font-size: 0.85rem;
 }
 
-.job-cards {
+.container-card {
     display: flex;
     gap: 14px;
     flex-wrap: wrap;
@@ -343,7 +344,7 @@ input[type="number"] {
     margin: 0;
 }
 
-.nome-vaga {
+.carga-vaga {
     font-size: 1.2rem;
     font-weight: 500;
     color: var(--title-esc);
@@ -374,7 +375,7 @@ input[type="number"] {
     color: #7ffda7;
 }
 
-.bg-modalidade {
+.bg-contrato {
     background: linear-gradient(90deg, rgb(122, 68, 5) 19%, rgb(156, 95, 24) 100%);
     background-color: #85541b;
     color: #ffd415;
@@ -411,9 +412,10 @@ input[type="number"] {
     margin: 0;
 }
 
-.hidden {
+/* .hidden {
     display: none;
 }
+ */
 
 .form input:-webkit-autofill,
 .form input:-webkit-autofill:hover,

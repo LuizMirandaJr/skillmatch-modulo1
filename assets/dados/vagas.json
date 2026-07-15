@@ -4,89 +4,109 @@
         "empresa": "Tech Solutions",
         "cargo": "Desenvolvedor Front-end Júnior",
         "nivel": "Júnior",
-        "modalidade": "Remoto",
+        "modelo": "Remoto",
+        "contrato": "CLT",
         "salario": 3800,
-        "local": "São Paulo - SP"
+        "local": "São Paulo - SP",
+        "logo": "https://cdn-icons-png.flaticon.com/512/2721/2721297.png"
     },
     {
         "id": 2,
         "empresa": "CodeWave",
         "cargo": "Desenvolvedor Front-end Pleno",
         "nivel": "Pleno",
-        "modalidade": "Híbrido",
+        "modelo": "Híbrido",
+        "contrato": "PJ",
         "salario": 6200,
-        "local": "Curitiba - PR"
+        "local": "Curitiba - PR",
+        "logo": "https://cdn-icons-png.flaticon.com/512/2103/2103633.png"
     },
     {
         "id": 3,
         "empresa": "Pixel Studio",
         "cargo": "Desenvolvedor Front-end React",
         "nivel": "Pleno",
-        "modalidade": "Remoto",
+        "modelo": "Remoto",
+        "contrato": "PJ",
         "salario": 7500,
-        "local": "Rio de Janeiro - RJ"
+        "local": "Rio de Janeiro - RJ",
+        "logo": "https://cdn-icons-png.flaticon.com/512/4248/4248443.png"
     },
     {
         "id": 4,
         "empresa": "DevCore",
         "cargo": "Desenvolvedor Back-end Node.js",
         "nivel": "Pleno",
-        "modalidade": "Remoto",
+        "modelo": "Remoto",
+        "contrato": "CLT",
         "salario": 7000,
-        "local": "Belo Horizonte - MG"
+        "local": "Belo Horizonte - MG",
+        "logo": "https://cdn-icons-png.flaticon.com/512/2721/2721305.png"
     },
     {
         "id": 5,
         "empresa": "CloudSoft",
         "cargo": "Desenvolvedor Back-end Java",
         "nivel": "Sênior",
-        "modalidade": "Presencial",
+        "modelo": "Presencial",
+        "contrato": "CLT",
         "salario": 9800,
-        "local": "Campinas - SP"
+        "local": "Campinas - SP",
+        "logo": "https://cdn-icons-png.flaticon.com/512/4149/4149676.png"
     },
     {
         "id": 6,
         "empresa": "Infinity Tech",
         "cargo": "Desenvolvedor Back-end Python",
         "nivel": "Júnior",
-        "modalidade": "Remoto",
+        "modelo": "Remoto",
+        "contrato": "PJ",
         "salario": 4500,
-        "local": "Recife - PE"
+        "local": "Recife - PE",
+        "logo": "https://cdn-icons-png.flaticon.com/512/1006/1006771.png"
     },
     {
         "id": 7,
         "empresa": "Next Systems",
         "cargo": "Desenvolvedor Full Stack",
         "nivel": "Pleno",
-        "modalidade": "Remoto",
+        "modelo": "Remoto",
+        "contrato": "CLT",
         "salario": 8500,
-        "local": "Florianópolis - SC"
+        "local": "Florianópolis - SC",
+        "logo": "https://cdn-icons-png.flaticon.com/512/5969/5969059.png"
     },
     {
         "id": 8,
         "empresa": "Digital Labs",
         "cargo": "Desenvolvedor Full Stack JavaScript",
         "nivel": "Júnior",
-        "modalidade": "Híbrido",
+        "modelo": "Híbrido",
+        "contrato": "CLT",
         "salario": 5500,
-        "local": "Porto Alegre - RS"
+        "local": "Porto Alegre - RS",
+        "logo": "https://cdn-icons-png.flaticon.com/512/1055/1055687.png"
     },
     {
         "id": 9,
         "empresa": "Rocket Systems",
         "cargo": "Desenvolvedor Full Stack",
         "nivel": "Sênior",
-        "modalidade": "Remoto",
+        "modelo": "Remoto",
+        "contrato": "PJ",
         "salario": 12500,
-        "local": "São Paulo - SP"
+        "local": "São Paulo - SP",
+        "logo": "https://cdn-icons-png.flaticon.com/512/3212/3212608.png"
     },
     {
         "id": 10,
         "empresa": "Nova Code",
         "cargo": "Desenvolvedor Front-end Vue.js",
         "nivel": "Júnior",
-        "modalidade": "Presencial",
+        "modelo": "Presencial",
+        "contrato": "CLT",
         "salario": 4200,
-        "local": "Joinville - SC"
+        "local": "Joinville - SC",
+        "logo": "https://cdn-icons-png.flaticon.com/512/4248/4248443.png"
     }
 ]

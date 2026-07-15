@@ -9,7 +9,7 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
-    <link rel="stylesheet" href="../assets/styles/styles-index.css">
+    <link rel="stylesheet" href="../assets/styles/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -83,7 +83,7 @@
         </section>
 
         <!-- VAGA DESTAQUE -->
-        <section id="vaga-destaque" class="vagas hidden">
+        <!--  <section id="vaga-destaque" class="vagas hidden">
             <div class="vagas-titulos">
                 <h2 id="titulo-h2"><i class="bi bi-stars icon-title"></i> Destaque</h2>
                 <p class="vagas-texto">Vaga que mais combina com você.</p>
@@ -113,38 +113,39 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- RESULTADO VAGAS -->
-        <section id="vaga-geral" class="vagas hidden">
-            <div class="vagas-titulos">
+        <section id="container-vagas" class="container-vagas">
+            <!-- <div class="vagas-titulos">
                 <h2 id="titulo-h2"><i class="bi bi-stars icon-title"></i> Vagas para você</h2>
                 <p class="vagas-texto">Todas as vagas baseadas no seu perfil</p>
-            </div>
-            <div class="job-cards">
-                <div class="job-card-sup">
-                    <div class="job-card-img">
-                        <div class="logo-vaga">
-                            <img src="https://images.vexels.com/media/users/3/135200/isolated/preview/6e34bca5f7091d42d242da24333ef273-icone-de-circulo-do-botao-de-ordem-aleatoria.png"
-                                alt="">
+            </div> -->
+            <div class="container-card" id="container-card">
+                <!-- <div class="job-card" id="job-card">
+                    <div class="job-card-sup">
+                        <div class="job-card-img">
+                            <div class="logo-vaga">
+                                <img src="vaga.logo" alt="">
+                            </div>
+                        </div>
+                        <div class="job-infos">
+                            <p id="empresa" class="empresa">${vaga.empresa}</p>
+                            <h3 id="cargo-vaga" class="cargo-vaga">${vaga.cargo}</h3>
+                            <div class="modelo-salario">
+                                <span id="modelo" class="tag-vaga bg-modelo">${vaga.modelo}</span>
+                                <span id="salario" class="tag-vaga bg-salario">${vaga.salario}</span>
+                                <span id="contrato" class="tag-vaga bg-contrato">${vaga.contrato}</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="job-infos">
-                        <p id="empresa" class="empresa"></p>
-                        <h3 id="nome-vaga" class="nome-vaga"></h3>
-                        <div class="modelo-salario">
-                            <span id="modelo" class="tag-vaga bg-modelo"></span>
-                            <span id="salario" class="tag-vaga bg-salario"></span>
-                            <span id="modalidade" class="tag-vaga bg-modalidade"></span>
+                    <div class="compatibilidade">
+                        <p id="compatibilidade" class="comp-texto">Compatibilidade</p>
+                        <div id="barra-bg" class="w3-round barra-bg barra">
+                            <div id="barra-txt" class="w3-container w3-round barra-cor barra-txt" style="width:25%">25%
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="compatibilidade">
-                    <p id="compatibilidade" class="comp-texto">Compatibilidade</p>
-                    <div id="barra-bg" class="w3-round barra-bg barra">
-                        <div id="barra-txt" class="w3-container w3-round barra-cor barra-txt" style="width:25%">25%
-                        </div>
-                    </div>
-                </div>
+                </div> -->
             </div>
         </section>
     </main>
