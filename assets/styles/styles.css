@@ -290,19 +290,14 @@ input[type="number"] {
 
 /* CARDS DE VAGAS */
 
-.container-vagas {
+.container-job {
     padding: 10px 0;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-}
-
-.vagas-texto {
-    text-align: center;
-    color: var(--txt-sec-esc);
-    font-size: 0.85rem;
+    gap: 12px;
+    max-width: auto;
 }
 
 .container-card {
@@ -317,6 +312,13 @@ input[type="number"] {
     background-color: var(--card-bg-esc);
     border: solid 1px var(--txt-prin-claro);
 }
+
+.vagas-texto {
+    text-align: center;
+    color: var(--txt-sec-esc);
+    font-size: 0.85rem;
+}
+
 
 .job-card-sup {
     display: flex;
@@ -351,10 +353,11 @@ input[type="number"] {
     margin: 0;
 }
 
-.modelo-salario {
+.infos-contrato {
     display: flex;
     gap: 10px;
     margin-top: 4px;
+    margin-bottom: 10px;
 }
 
 .tag-vaga {
@@ -412,10 +415,10 @@ input[type="number"] {
     margin: 0;
 }
 
-/* .hidden {
+.hidden {
     display: none;
 }
- */
+
 
 .form input:-webkit-autofill,
 .form input:-webkit-autofill:hover,
