@@ -1,6 +1,10 @@
 let habilidadesCarregadas = []
 let vagasCarregadas = []
+let habilidadesSelecionadas = []
+
 const formDados = document.getElementById("form-dados")
+
+let quantidadeVagas = 2
 
 async function carregarHabilidades() {
 
@@ -40,7 +44,6 @@ function mostrarHabilidades() {
 carregarHabilidades()
 
 
-
 formDados.addEventListener("submit", (event) => {
     event.preventDefault()
 
@@ -48,15 +51,16 @@ formDados.addEventListener("submit", (event) => {
     const idade = document.getElementById("idade").value
     const experiencia = document.getElementById("experiencia").value
 
-    const habilidadesSelecionadas = document.querySelectorAll("input:checked")
-
     console.log(nome)
     console.log(idade)
     console.log(experiencia)
+    habilidadesSelecionadas = []
 
-    habilidadesSelecionadas.forEach(item => {
-        console.log(item.value)
+    document.querySelectorAll("input:checked").forEach(item => {
+        // console.log(item.value)
+        habilidadesSelecionadas.push(item.value)
     })
+    carregarVagas()
 })
 
 async function carregarVagas() {
@@ -67,22 +71,33 @@ async function carregarVagas() {
     const dados = await resposta.json()
     // console.log(dados) // console para ver a lista de vagas
 
-    vagasCarregadas = dados
 
-    function mostrarVagas() {
-        const mostrarTitulo = document.getElementById("container-vagas")
-        const htmlVaga = document.getElementById("container-job")
+    vagasCarregadas = dados.map(dado => new Vaga(dado))
 
-        mostrarTitulo.classList.remove("hidden")
+    console.log(vagasCarregadas)
 
-        htmlVaga.innerHTML = ""
-        let renderizarLista = ""
+    mostrarVagas()
+
+}
+
+function mostrarVagas() {
+    const mostrarTitulo = document.getElementById("container-vagas")
+    const htmlVaga = document.getElementById("container-job")
+
+    mostrarTitulo.classList.remove("hidden")
+
+    htmlVaga.innerHTML = ""
+    let renderizarLista = ""
+
+    vagasCarregadas.slice(0, quantidadeVagas).forEach(vaga => {
+
+        const compatibilidade = vaga.calcularCompatibilidade(habilidadesSelecionadas)
+
+        console.log(`Compatibilidade: ${compatibilidade}%`)
 
 
-        vagasCarregadas.forEach(vaga => {
-            renderizarLista += `
-            <div class="container-card" id="container-card">
-                    <div class="job-card" id="job-card">
+        renderizarLista += `
+                    <div class="container-card">
                         <div class="job-card-sup">
                             <div class="job-card-img">
                                 <div class="logo-vaga">
@@ -90,31 +105,73 @@ async function carregarVagas() {
                                 </div>
                             </div>
                             <div class="job-infos">
-                                <p id="empresa" class="empresa">${vaga.empresa}</p>
-                                <h3 id="cargo-vaga" class="cargo-vaga">${vaga.cargo}</h3>
+                                <p class="empresa">${vaga.empresa}</p>
+                                <h3 class="cargo-vaga">${vaga.cargo}</h3>
                                 <div class="infos-contrato">
-                                    <span id="modelo" class="tag-vaga bg-modelo">${vaga.modelo}</span>
-                                    <span id="salario" class="tag-vaga bg-salario">${vaga.salario}</span>
-                                    <span id="contrato" class="tag-vaga bg-contrato">${vaga.contrato}</span>
+                                    <span class="tag-vaga bg-modelo">${vaga.modelo}</span>
+                                    <span class="tag-vaga bg-salario">R$ ${vaga.salario.toLocaleString("pt-BR")}</span>
+                                    <span class="tag-vaga bg-contrato">${vaga.contrato}</span>
                                 </div>
                             </div>
                         </div>
+                        <div class="requisitos">
+            <h3 class="req-titulo">Requisitos:</h3>
+           <p class="req-list">${vaga.habilidades.join(", ")}</p>
+        </div>
                         <div class="compatibilidade">
-                            <p id="compatibilidade" class="comp-texto">Compatibilidade</p>
-                            <div id="barra-bg" class="w3-round barra-bg barra">
-                                <div id="barra-txt" class="w3-container w3-round barra-cor barra-txt" style="width:25%">
-                                    25%
+                            <p class="comp-texto">Compatibilidade</p>
+                            <div class="w3-round barra-bg barra">
+                                <div class="w3-container w3-round barra-cor barra-txt" style="width:${compatibilidade}%">
+                                    ${compatibilidade}%
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
             `
-        })
+    })
 
-        htmlVaga.innerHTML = renderizarLista
-    }
-    mostrarVagas()
+    htmlVaga.innerHTML = renderizarLista
 }
 
-carregarVagas()
+function mostrarMais() {
+    const btnMais = document.getElementById("btn-mais")
+    if (quantidadeVagas >= vagasCarregadas.length) {
+        btnMais.style.display = "none"
+    } else {
+        quantidadeVagas += 2
+        carregarVagas()
+    }
+}
+
+
+class Vaga {
+    constructor(dado) {
+        this.logo = dado.logo
+        this.empresa = dado.empresa
+        this.cargo = dado.cargo
+        this.salario = dado.salario
+        this.modelo = dado.modelo
+        this.contrato = dado.contrato
+        this.habilidades = dado.habilidades
+    }
+    calcularCompatibilidade(habilidadesCandidato) {
+        let habilidadesCompativeis = 0
+
+        console.log(`Habilidades Necessárias: ${this.habilidades}`)
+        console.log(`Habilidades Preenchidas: ${habilidadesSelecionadas}`)
+
+        this.habilidades.forEach(habilidade => {
+
+            console.log("Comparando:", habilidade)
+
+            if (habilidadesCandidato.includes(habilidade)) {
+                habilidadesCompativeis++
+                console.log("Encontradas!")
+            }
+        })
+
+        return Math.round(
+            habilidadesCompativeis / this.habilidades.length * 100
+        )
+    }
+}

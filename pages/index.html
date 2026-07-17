@@ -19,19 +19,8 @@
 
 <body>
     <header>
-        <nav>
+        <nav class="menu">
             <img src="../assets/imgs/logo-escuro.png" class="logo" alt="logo skillmatch">
-            <div class="menu">
-                <div class="hover-underline">
-                    <a href="./index.html">Minhas Vagas</a>
-                </div>
-                <div class="hover-underline">
-                    <a href="./criar.html">Criar Vaga</a>
-                </div>
-                <div class="hover-underline">
-                    <a href="./vagas.html">Todas as Vagas</a>
-                </div>
-            </div>
             <span class="borda"></span>
         </nav>
     </header>
@@ -77,13 +66,13 @@
 
                 </div>
 
-                <button type="submit" id="btn-id" class="btn btn-primary btn-lg btn-block">Encontrar vagas <i
-                        class="bi bi-search"></i></button>
+                <button type="submit" id="btn-id" class="btn btn-form btn-primary btn-lg btn-block"
+                    onclick="carregarVagas()">Encontrar vagas <i class="bi bi-search"></i></button>
             </form>
         </section>
 
         <!-- VAGA DESTAQUE -->
-        <!--  <section id="vaga-destaque" class="vagas hidden">
+        <!-- <section id="vaga-destaque" class="vagas hidden">
             <div class="vagas-titulos">
                 <h2 id="titulo-h2"><i class="bi bi-stars icon-title"></i> Destaque</h2>
                 <p class="vagas-texto">Vaga que mais combina com você.</p>
@@ -106,7 +95,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="compatibilidade">
+        <div class="compatibilidade">
                     <p class="comp-texto">Compatibilidade</p>
                     <div class="w3-round barra-bg barra">
                         <div class="w3-container w3-round barra-cor barra-txt" style="width:92%">92%</div>
@@ -122,6 +111,7 @@
             </div>
             <div class="container-job" id="container-job">
             </div>
+            <button id="btn-mais" class="btn-mais" onclick="mostrarMais()">Mostrar Mais</button>
         </section>
     </main>
 

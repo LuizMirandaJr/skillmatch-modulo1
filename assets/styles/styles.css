@@ -58,55 +58,6 @@ nav img {
     margin: 20px 0;
 }
 
-.menu {
-    display: flex;
-    gap: 1.563em;
-}
-
-.menu a {
-    padding: 16px 0;
-    font-size: .85rem;
-    text-decoration: none;
-    color: var(--txt-sec-esc);
-}
-
-.menu a:hover {
-    color: var(--tag-txt);
-    transition: 0.3s ease-out;
-    font-weight: 500;
-}
-
-.hover-underline {
-    font-size: 2rem;
-    color: #ffffff;
-    position: relative;
-    display: inline-block;
-}
-
-.hover-underline::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(to right, var(--primaria), var(--secundaria));
-    bottom: -5px;
-    left: 0;
-    transform: scaleX(0);
-    transform-origin: center;
-    transition: transform 0.3s ease-out;
-    border-radius: 50%;
-}
-
-.hover-underline::before {
-    top: -5px;
-    transform-origin: left;
-}
-
-.hover-underline:hover::after,
-.hover-underline:hover::before {
-    transform: scaleX(1);
-}
-
 /* TITULO E ICONE --- HERO */
 
 .hero {
@@ -277,18 +228,47 @@ input[type="number"] {
 }
 
 
-.btn {
+.btn-form {
     background: linear-gradient(90deg, rgba(79, 2, 168, 1) 19%, rgba(0, 140, 255, 1) 100%);
     border: none;
     transition: transform 1s ease, filter .3s ease;
 }
 
-.btn:hover {
+.btn-form:hover {
+    filter: brightness(1.5);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, .03), 0 2px 8px rgba(0, 0, 0, .18);
+}
+
+.btn-mais {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--title-claro);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    color: var(--txt-sec-esc);
+    transition: transform 1s ease, filter .3s ease;
+}
+
+.btn-mais:hover {
     filter: brightness(1.5);
     box-shadow: inset 0 1px 1px rgba(255, 255, 255, .03), 0 2px 8px rgba(0, 0, 0, .18);
 }
 
 /* CARDS DE VAGAS */
+
+.container-vagas {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.vagas-titulos {
+    padding: 10px 0;
+}
 
 .container-job {
     padding: 10px 0;
@@ -317,6 +297,7 @@ input[type="number"] {
     text-align: center;
     color: var(--txt-sec-esc);
     font-size: 0.85rem;
+    margin: 0
 }
 
 
@@ -383,6 +364,29 @@ input[type="number"] {
     background-color: #85541b;
     color: #ffd415;
 }
+
+.requisitos {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+}
+
+.req-titulo {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--txt-sec-esc);
+    margin: 0;
+}
+
+.req-list {
+    font-size: 1rem;
+    color: var(--txt-sec-esc);
+    margin: 0;
+}
+
 
 .compatibilidade {
     width: 100%;
