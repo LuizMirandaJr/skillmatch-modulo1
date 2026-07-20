@@ -1,3 +1,6 @@
+import { Vaga } from "./skillmatch.js"
+import { mostrarHabilidades, mostrarVagas } from "./ui.js"
+
 let habilidadesCarregadas = []
 let vagasCarregadas = []
 let habilidadesSelecionadas = []
@@ -17,29 +20,7 @@ async function carregarHabilidades() {
 
     habilidadesCarregadas = dados
 
-    mostrarHabilidades()
-}
-
-function mostrarHabilidades() {
-
-    listaHabilidades.innerHTML = ""
-
-    habilidadesCarregadas.forEach(habilidade => {
-        const label = document.createElement("label")
-        label.classList.add("checkbox-habilidade", "texto-habilidade")
-
-        const input = document.createElement("input")
-        input.type = "checkbox"
-        input.value = habilidade.nome
-        input.name = "habilidadeSelecionada"
-
-        label.appendChild(input)
-        label.append(habilidade.nome)
-
-
-        listaHabilidades.appendChild(label)
-
-    })
+    mostrarHabilidades(listaHabilidades, habilidadesCarregadas)
 }
 
 carregarHabilidades()
@@ -52,9 +33,10 @@ formDados.addEventListener("submit", (event) => {
     const idade = document.getElementById("idade").value
     const experiencia = document.getElementById("experiencia").value
 
-    console.log(nome)
-    console.log(idade)
-    console.log(experiencia)
+    /* console.log(nome) */
+    /* console.log(idade) */
+    /* console.log(experiencia) */
+
     habilidadesSelecionadas = []
 
     document.querySelectorAll("input:checked").forEach(item => {
@@ -62,10 +44,10 @@ formDados.addEventListener("submit", (event) => {
         habilidadesSelecionadas.push(item.value)
     })
 
+    let selecioneHabilidade = document.getElementById("selecioneHabilidade")
 
     // Validar que os inputs / habilidades estejam preenchidos
     if (habilidadesSelecionadas.length === 0) {
-        let selecioneHabilidade = document.getElementById("selecioneHabilidade")
         selecioneHabilidade.style.opacity = "1"
         selecioneHabilidade.style.position = "relative"
         selecioneHabilidade.style.background = "rgb(121, 2, 2)"
@@ -77,8 +59,8 @@ formDados.addEventListener("submit", (event) => {
         carregarVagas()
     }
 
-
 })
+
 
 async function carregarVagas() {
 
@@ -93,164 +75,11 @@ async function carregarVagas() {
 
     // console.log(vagasCarregadas)
 
-    mostrarVagas()
+    mostrarVagas(vagasCarregadas, habilidadesSelecionadas, quantidadeVagas)
 }
 
-function mostrarVagas() {
-    const mostrarTitulo = document.getElementById("section-vagas")
-    const htmlVaga = document.getElementById("container-job")
+window.mostrarMais = function () {
+    quantidadeVagas += 2
 
-    mostrarTitulo.classList.remove("hidden")
-
-    htmlVaga.innerHTML = ""
-    let renderizarLista = ""
-
-    let vagasOrdenadas = [...vagasCarregadas]
-
-    vagasOrdenadas.forEach(vaga => {
-        vaga.compatibilidade = vaga.calcularCompatibilidade(habilidadesSelecionadas)
-    })
-    vagasOrdenadas.sort((a, b) => b.compatibilidade - a.compatibilidade)
-
-    const vagaDestaque = vagasOrdenadas[0]
-
-    mostrarDestaque(vagaDestaque)
-
-
-    vagasOrdenadas.slice(1, quantidadeVagas + 1).forEach(vaga => {
-
-        const tagSkills = mostrarTagSkills(vaga)
-
-        renderizarLista += `
-                    <div class="container-card card">
-                        <div class="job-card-sup">
-                            <div class="job-card-img">
-                                <div class="logo-vaga">
-                                    <img src="${vaga.logo}" alt="">
-                                </div>
-                            </div>
-                            <div class="job-infos">
-                                <p class="empresa">${vaga.empresa}</p>
-                                <h3 class="cargo-vaga">${vaga.cargo}</h3>
-                                <div class="infos-contrato">
-                                    <span class="tag-vaga bg-modelo">${vaga.modelo}</span>
-                                    <span class="tag-vaga bg-salario">R$ ${vaga.salario.toLocaleString("pt-BR")}</span>
-                                    <span class="tag-vaga bg-contrato">${vaga.contrato}</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container-skills">
-            <h3 class="skills-titulo">Skill:</h3>
-            <div class="skills-vaga">${tagSkills}</div>
-        </div>
-                        <div class="compatibilidade">
-                            <p class="comp-texto">Compatibilidade</p>
-                            <div class="w3-round barra-bg barra">
-                                <div class="w3-container w3-round barra-cor barra-txt" style="width:${vaga.compatibilidade}%">
-                                    ${vaga.compatibilidade}%
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-            `
-    })
-
-    // console.log(`Compatibilidade: ${compatibilidade}%`)
-
-    htmlVaga.innerHTML = renderizarLista
-}
-
-function mostrarDestaque(vaga) {
-    const destaque = document.getElementById("section-destaque");
-    const htmlDestaque = document.getElementById("destaque-job");
-
-    const tagSkills = mostrarTagSkills(vaga)
-
-    destaque.classList.remove("hidden");
-
-    htmlDestaque.innerHTML = `
-        <div class="container-destaque card">
-                        <div class="job-card-sup">
-                            <div class="job-card-img">
-                                <div class="logo-vaga">
-                                    <img src="${vaga.logo}" alt="">
-                                </div>
-                            </div>
-                            <div class="job-infos">
-                                <p class="empresa">${vaga.empresa}</p>
-                                <h3 class="cargo-vaga">${vaga.cargo}</h3>
-                                <div class="infos-contrato">
-                                    <span class="tag-vaga bg-modelo">${vaga.modelo}</span>
-                                    <span class="tag-vaga bg-salario">R$ ${vaga.salario.toLocaleString("pt-BR")}</span>
-                                    <span class="tag-vaga bg-contrato">${vaga.contrato}</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container-skills">
-            <h3 class="skills-titulo">Skill:</h3>
-            <div class="skills-vaga">${tagSkills}</div>
-        </div>
-                        <div class="compatibilidade">
-                            <p class="comp-texto">Compatibilidade</p>
-                            <div class="w3-round barra-bg barra">
-                                <div class="w3-container w3-round barra-destaque destaque-txt" style="width:${vaga.compatibilidade}%">
-                                    ${vaga.compatibilidade}%
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-    `
-}
-
-function mostrarTagSkills(vaga) {
-    return vaga.habilidades.map(habilidade => {
-        const possui = habilidadesSelecionadas.includes(habilidade)
-
-        return `
-        <span class="tag-skill ${possui ? "skill-ok" : "skill-falta"}">${habilidade}</span>
-        `
-    }).join("")
-
-}
-
-function mostrarMais() {
-    mostrarVagas()
-    quantidadeVagas += 2;
-}
-
-class Vaga {
-    constructor(dado) {
-        this.logo = dado.logo
-        this.empresa = dado.empresa
-        this.cargo = dado.cargo
-        this.salario = dado.salario
-        this.modelo = dado.modelo
-        this.contrato = dado.contrato
-        this.habilidades = dado.habilidades
-    }
-
-    calcularCompatibilidade(habilidadesCandidato) {
-        let habilidadesCompativeis = 0
-
-        console.log(`Habilidades Necessárias: ${this.habilidades}`)
-        console.log(`Habilidades Preenchidas: ${habilidadesSelecionadas}`)
-
-        this.habilidades.forEach(habilidade => {
-
-            console.log("Comparando:", habilidade)
-
-            if (habilidadesCandidato.includes(habilidade)) {
-                habilidadesCompativeis++
-                console.log("Encontradas!")
-            }
-        })
-        return Math.round(
-            habilidadesCompativeis / this.habilidades.length * 100
-        )
-    }
-    recomendacaoEstudos(habilidadesSelecionadas) {
-        return this.habilidades.filter(habilidade =>
-            !habilidadesSelecionadas.includes(habilidade)
-        )
-    }
+    mostrarVagas(vagasCarregadas, habilidadesSelecionadas, quantidadeVagas)
 }
