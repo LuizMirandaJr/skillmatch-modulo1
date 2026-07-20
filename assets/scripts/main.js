@@ -56,6 +56,7 @@ formDados.addEventListener("submit", (event) => {
     console.log(idade)
     console.log(experiencia)
     habilidadesSelecionadas = []
+    habilidadesFaltantes = !habilidadesSelecionadas
 
     document.querySelectorAll("input:checked").forEach(item => {
         // console.log(item.value)
@@ -109,6 +110,7 @@ function mostrarVagas() {
 
     vagasOrdenadas.forEach(vaga => {
         vaga.compatibilidade = vaga.calcularCompatibilidade(habilidadesSelecionadas)
+        const recomendacao = vaga.recomendacaoEstudos(habilidadesSelecionadas)
     })
     vagasOrdenadas.sort((a, b) => b.compatibilidade - a.compatibilidade)
 
@@ -235,9 +237,13 @@ class Vaga {
                 console.log("Encontradas!")
             }
         })
-
         return Math.round(
             habilidadesCompativeis / this.habilidades.length * 100
+        )
+    }
+    recomendacaoEstudos(habilidadesSelecionadas) {
+        return this.habilidades.filter(habilidade =>
+            !habilidadesSelecionadas.includes(habilidade)
         )
     }
 }
