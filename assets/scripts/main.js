@@ -214,8 +214,8 @@ function mostrarTagSkills(vaga) {
 }
 
 function mostrarMais() {
-    quantidadeVagas += 2;
     mostrarVagas()
+    quantidadeVagas += 2;
 }
 
 class Vaga {
