@@ -3,114 +3,173 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Encontre vagas compatíveis com suas habilidades. O SkillMatch compara seu perfil com oportunidades disponíveis de forma simples e inteligente.">
+
     <title>Skill Match</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+
     <link rel="stylesheet" href="../assets/styles/styles.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 </head>
 
 <body>
+
     <div class="body-container">
+
         <header>
-            <nav class="menu">
-                <img src="./assets/imgs/logo-escuro.png" class="logo" alt="logo skillmatch">
+            <nav class="menu" aria-label="Menu principal">
+                <img src="./assets/imgs/logo-escuro.png" class="logo" alt="Logo do SkillMatch">
             </nav>
         </header>
+
+
         <main class="main-content">
-            <section class="hero">
+
+            <section class="hero" aria-labelledby="titulo-principal">
                 <div class="hero-titulos">
                     <div class="hero-mensagem">
-                        <h1 class="hero-titulo">Encontre vagas que combinam <span class="span-txt">com você</span></h1>
-                        <p class="hero-texto">Informe seus dados e descubra as melhores oportunidades para o seu perfil.
+                        <h1 id="titulo-principal" class="hero-titulo">
+                            Encontre vagas que combinam <span class="span-txt">com você</span>
+                        </h1>
+                        <p class="hero-texto">
+                            Informe seus dados e descubra as melhores oportunidades para o seu perfil.
                         </p>
                     </div>
-                    <img src="./assets/imgs/hero-img.png" alt="icone para skillmatch" class="hero-img">
+
+                    <img src="./assets/imgs/hero-img.png" alt="Ilustração representando busca por oportunidades"
+                        class="hero-img">
                 </div>
             </section>
+
             <!-- FORMULÁRIO -->
-            <section class="section-form">
-                <form id="form-dados" action="form" class="formulario">
-                    <h2 id="titulo-h2" class="form-titulo"><i class="bi bi-person-circle icon-title"></i> Seus Dados
+
+            <section class="section-form" aria-labelledby="titulo-form">
+
+                <form id="form-dados" action="form" method="post" class="formulario">
+
+                    <h2 id="titulo-form" class="form-titulo">
+                        <i class="bi bi-person-circle icon-title" aria-hidden="true"></i>
+                        Seus Dados
                     </h2>
+
+
                     <div class="form-dados">
                         <div class="form">
                             <label for="nome" class="txt-label">Nome</label>
-                            <input type="text" placeholder="Digite seu nome" id="nome" required>
-                        </div>
-                        <div class="form">
-                            <label for="idade" class="txt-label">Idade</label>
-                            <input type="number" placeholder="Digite sua idade" id="idade" class="input-number"
+                            <input type="text" placeholder="Digite seu nome" id="nome" name="nome" autocomplete="name"
                                 required>
                         </div>
+
+                        <div class="form">
+                            <label for="idade" class="txt-label">Idade</label>
+                            <input type="number" placeholder="Digite sua idade" id="idade" name="idade"
+                                class="input-number" required>
+                        </div>
                     </div>
+
                     <div class="form">
-                        <label for="experiencia" class="txt-label">Tempo de experiência</label>
+                        <label for="experiencia" class="txt-label">
+                            Tempo de experiência
+                        </label>
+
                         <select name="experiencia" id="experiencia" required>
+
                             <option value="sem-experiencia">Sem experiência</option>
+
                             <option value="1-2-anos">1-2 anos</option>
-                            <option value="3-5-anos">3-5 anos</option>
-                            <option value="+5-anos">+5 anos</option>
+
+                            <option value="3-5-anos">3-5 anos </option>
+
+                            <option value="+5-anos">+5 anos </option>
                         </select>
                     </div>
 
                     <div class="lista-habilidades">
-                        <h3 class="txt-label">Minhas Skills</h3>
-                        <div id="tags-habilidades" class="tags-habilidades">
+                        <h3 class="txt-label"> Minhas Skills </h3>
+                        <div id="tags-habilidades" class="tags-habilidades" role="group"
+                            aria-label="Lista de habilidades disponíveis">
                             <!-- BASE PARA ESCREVER COM O JAVASCRIPT -->
-                            <!-- <label class="checkbox-habilidade texto-habilidade">
-                            <input type="checkbox" name="habilidades" value="habilidade">
-                            <span>CSS</span>
-                        </label> -->
                         </div>
                     </div>
-                    <p class="selecioneHabilidade" id="selecioneHabilidade">Selecione pelo menos uma skill!</p>
-
-                    <button type="submit" id="btn-id" class="btn btn-form btn-primary btn-lg btn-block">Encontrar vagas
-                        <i class="bi bi-search"></i></button>
+                    <p class="selecioneHabilidade" id="selecioneHabilidade" role="alert" aria-live="polite">
+                        Selecione pelo menos uma skill!
+                    </p>
+                    <button type="submit" id="btn-id" class="btn btn-form btn-primary btn-lg btn-block"
+                        aria-label="Encontrar vagas compatíveis">
+                        Encontrar vagas
+                        <i class="bi bi-search" aria-hidden="true"></i>
+                    </button>
                 </form>
             </section>
 
             <!-- VAGA DESTAQUE -->
-            <section id="section-destaque" class="container-vagas hidden">
-                <div class="vagas-titulos" id="vagas-titulos">
-                    <h2 id="titulo-h2"><i class="bi bi-stars icon-title"></i> Destaque</h2>
-                    <p class="vagas-texto">Vaga que mais combina com você.</p>
+
+            <section id="section-destaque" class="container-vagas hidden" aria-labelledby="titulo-destaque">
+                <div class="vagas-titulos" id="vagas-titulos-destaque">
+                    <h2 id="titulo-destaque">
+                        <i class="bi bi-stars icon-title" aria-hidden="true"></i>
+                        Destaque
+                    </h2>
+                    <p class="vagas-texto">
+                        Vaga que mais combina com você.
+                    </p>
                 </div>
-                <div class="container-job" id="destaque-job">
+                <div class="container-job" id="destaque-job" aria-live="polite">
                 </div>
             </section>
+
             <!-- RESULTADO VAGAS -->
-            <section id="section-vagas" class="container-vagas hidden">
+
+            <section id="section-vagas" class="container-vagas hidden" aria-labelledby="titulo-vagas">
                 <div class="vagas-titulos" id="vagas-titulos">
-                    <h2 id="titulo-h2"><i class="bi bi-stars icon-title"></i> Vagas para você</h2>
-                    <p class="vagas-texto">Todas as vagas baseadas no seu perfil</p>
+                    <h2 id="titulo-vagas">
+                        <i class="bi bi-stars icon-title" aria-hidden="true"></i>
+                        Vagas para você
+                    </h2>
+                    <p class="vagas-texto">
+                        Todas as vagas baseadas no seu perfil
+                    </p>
                 </div>
-                <div class="container-job" id="container-job">
+                <div class="container-job" id="container-job" aria-live="polite">
                 </div>
                 <div class="container-btn">
-                    <button id="btn-mais" class="btn-mais" onclick="mostrarMais()">Mostrar Mais</button>
+                    <button id="btn-mais" class="btn-mais" type="button" onclick="mostrarMais()"
+                        aria-label="Mostrar mais vagas">
+                        Mostrar Mais
+                    </button>
                 </div>
             </section>
         </main>
         <footer class="rodape">
-            <span class="rodape-txt">Desenvolvido por <a href="https://github.com/LuizMirandaJr" class="link-rodape"
-                    target="_blank">Luiz Miranda Junior</a>
-                -
-                SCTec</span>
+            <span class="rodape-txt">
+                Desenvolvido por
+                <a href="https://github.com/LuizMirandaJr" class="link-rodape" target="_blank"
+                    rel="noopener noreferrer">
+                    Luiz Miranda Junior</a> - SCTec</span>
         </footer>
     </div>
+
+    <!-- SCRIPT BOOTSTRAP -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+        </script>
     <script type="module" src="./assets/scripts/main.js"></script>
+
+
 </body>
 
 </html>

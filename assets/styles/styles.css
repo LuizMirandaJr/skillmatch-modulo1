@@ -31,8 +31,8 @@
 
 
     /* Gradientes */
-    --gradiente-bg-escuro: linear-gradient(45deg, rgb(10, 19, 59) 19%, rgb(4, 13, 61) 100%);
-    --gradiente-bg-destaque: linear-gradient(45deg, #271c42 19%, #350455 100%);
+    --gradiente-bg-escuro: linear-gradient(45deg, rgb(6, 11, 34) 19%, rgb(12, 17, 43) 100%);
+    --gradiente-bg-destaque: linear-gradient(45deg, #251c3b 19%, #2a0b5c 100%);
     --gradiente-roxo: linear-gradient(90deg, rgb(67, 19, 126) 19%, rgb(91, 39, 151) 100%);
     --gradiente-verde: linear-gradient(90deg, rgb(3, 58, 20) 19%, rgb(5, 92, 2) 100%);
     --gradiente-laranja: linear-gradient(90deg, rgb(122, 68, 5) 19%, rgb(156, 95, 24) 100%);
@@ -47,7 +47,7 @@
 body {
     font-family: "Poppins", sans-serif;
     font-size: 16px;
-    background-color: var(--bg-escuro);
+    background: var(--gradiente-bg-escuro);
 }
 
 .body-container {
@@ -332,6 +332,7 @@ input[type="number"] {
 }
 
 .vagas-titulos {
+    color: var(--title-esc);
     padding: 10px 0;
 }
 
@@ -351,7 +352,7 @@ input[type="number"] {
 }
 
 .container-card {
-    background: var(--gradiente-bg-escuro);
+    background: var(--bg-card-escuro);
     border: 2px solid var(--gradiente-roxo);
     display: flex;
 }
