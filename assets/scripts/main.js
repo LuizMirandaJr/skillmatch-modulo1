@@ -56,7 +56,6 @@ formDados.addEventListener("submit", (event) => {
     console.log(idade)
     console.log(experiencia)
     habilidadesSelecionadas = []
-    habilidadesFaltantes = !habilidadesSelecionadas
 
     document.querySelectorAll("input:checked").forEach(item => {
         // console.log(item.value)
@@ -110,7 +109,6 @@ function mostrarVagas() {
 
     vagasOrdenadas.forEach(vaga => {
         vaga.compatibilidade = vaga.calcularCompatibilidade(habilidadesSelecionadas)
-        const recomendacao = vaga.recomendacaoEstudos(habilidadesSelecionadas)
     })
     vagasOrdenadas.sort((a, b) => b.compatibilidade - a.compatibilidade)
 
@@ -118,7 +116,10 @@ function mostrarVagas() {
 
     mostrarDestaque(vagaDestaque)
 
+
     vagasOrdenadas.slice(1, quantidadeVagas + 1).forEach(vaga => {
+
+        const tagSkills = mostrarTagSkills(vaga)
 
         renderizarLista += `
                     <div class="container-card card">
@@ -138,9 +139,9 @@ function mostrarVagas() {
                                 </div>
                             </div>
                         </div>
-                        <div class="requisitos">
-            <h3 class="req-titulo">Requisitos:</h3>
-           <p class="req-list">${vaga.habilidades.join(", ")}</p>
+                        <div class="container-skills">
+            <h3 class="skills-titulo">Skill:</h3>
+            <div class="skills-vaga">${tagSkills}</div>
         </div>
                         <div class="compatibilidade">
                             <p class="comp-texto">Compatibilidade</p>
@@ -163,6 +164,8 @@ function mostrarDestaque(vaga) {
     const destaque = document.getElementById("section-destaque");
     const htmlDestaque = document.getElementById("destaque-job");
 
+    const tagSkills = mostrarTagSkills(vaga)
+
     destaque.classList.remove("hidden");
 
     htmlDestaque.innerHTML = `
@@ -183,9 +186,9 @@ function mostrarDestaque(vaga) {
                                 </div>
                             </div>
                         </div>
-                        <div class="requisitos">
-            <h3 class="req-titulo">Requisitos:</h3>
-           <p class="req-list">${vaga.habilidades.join(", ")}</p>
+                        <div class="container-skills">
+            <h3 class="skills-titulo">Skill:</h3>
+            <div class="skills-vaga">${tagSkills}</div>
         </div>
                         <div class="compatibilidade">
                             <p class="comp-texto">Compatibilidade</p>
@@ -199,18 +202,21 @@ function mostrarDestaque(vaga) {
     `
 }
 
+function mostrarTagSkills(vaga) {
+    return vaga.habilidades.map(habilidade => {
+        const possui = habilidadesSelecionadas.includes(habilidade)
 
+        return `
+        <span class="tag-skill ${possui ? "skill-ok" : "skill-falta"}">${habilidade}</span>
+        `
+    }).join("")
 
-function mostrarMais() {
-    const btnMais = document.getElementById("btn-mais")
-    if (quantidadeVagas >= vagasCarregadas.length) {
-        btnMais.style.display = "none"
-    } else {
-        quantidadeVagas += 2
-        carregarVagas()
-    }
 }
 
+function mostrarMais() {
+    quantidadeVagas += 2;
+    mostrarVagas()
+}
 
 class Vaga {
     constructor(dado) {
@@ -222,6 +228,7 @@ class Vaga {
         this.contrato = dado.contrato
         this.habilidades = dado.habilidades
     }
+
     calcularCompatibilidade(habilidadesCandidato) {
         let habilidadesCompativeis = 0
 
