@@ -158,6 +158,7 @@ Link da aplicação online:
     https://skillmatch-modulo1-p2ys.vercel.app/
 
 Link do video de funcionamento:
+    https://drive.google.com/file/d/1_w2O9TlK0ErGwwHi0YKs-FF1G3X3WiQQ/view?usp=drive_link
 
 # 👨‍💻 Autor
 
